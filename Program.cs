@@ -4,8 +4,10 @@ Console.ReadKey();
 
 Console.WriteLine("Inicio");
 
-await Tarefa1Async();
-Tarefa2Async();
+var tarefa1 = Tarefa1Async();
+var tarefa2 = Tarefa2Async();
+
+await Task.WhenAll(tarefa1, tarefa2);
 
 Console.WriteLine("Fim");
 Console.ReadLine();
